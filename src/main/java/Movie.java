@@ -17,7 +17,7 @@ public class Movie {
                 "\nActors: " + actorList;
     }
 
-    public boolean checkMovieByActorName(String fullName) {
+    public boolean findActorInActorList(String fullName) {
         for (Actor actor : actorList)
             if ((actor.getFirstName()+" "+actor.getLastName()).equals(fullName)) {
                 return true;

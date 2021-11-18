@@ -41,7 +41,7 @@ public class MovieLibrary {
 
         boolean found = false;
         for (Movie movie : movieList) {
-            if (movie.checkMovieByActorName(fullName)) {
+            if (movie.findActorInActorList(fullName)) {
                 System.out.println(movie.getTitle());
                 found = true;
             }
