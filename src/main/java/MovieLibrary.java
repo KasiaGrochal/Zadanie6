@@ -13,7 +13,7 @@ public class MovieLibrary {
     public void printRandomMovieDetails() {
         int randomNumber = new Random().nextInt(movieList.size());
         Movie randomMovie = movieList.get(randomNumber);
-        System.out.println(randomMovie.toString());
+        System.out.println(randomMovie.toString().replace("[", "").replace("]",""));
     }
 
     public void printMoviesByDateRange() {
@@ -36,19 +36,18 @@ public class MovieLibrary {
     }
 
     public void getMovieByActorName() {
-        System.out.println("First name: ");
-        String firstName = UserInputHandler.getInputString();
-        System.out.println("Last name: ");
-        String lastName = UserInputHandler.getInputString();
+        System.out.println("Please type actor's full name:");
+        String fullName = UserInputHandler.getInputString();
+
         boolean found = false;
         for (Movie movie : movieList) {
-            if (movie.checkMovieByActorName(firstName, lastName)) {
+            if (movie.checkMovieByActorName(fullName)) {
                 System.out.println(movie.getTitle());
                 found = true;
             }
         }
         if (!found) {
-            System.out.println("No move was found for: " + firstName + " " + lastName);
+            System.out.println("No move was found for: " + fullName);
         }
     }
 
