@@ -22,11 +22,11 @@ public class MovieLibrary {
         System.out.println("Please type in until which year you'd like to search:");
         int endRange = UserInputHandler.getInputInt();
         boolean found = false;
-        System.out.println("\nList of movies produced from year " + startRange+ " to " + endRange+":");
+        System.out.println("\nList of movies produced from year " + startRange + " to " + endRange + ":");
         for (Movie movie : movieList) {
 
             if ((movie.getYearOfProduction() >= startRange) && movie.getYearOfProduction() <= endRange) {
-                System.out.println("\t"+movie.getTitle());
+                System.out.println("\t" + movie.getTitle());
                 found = true;
             }
         }
@@ -40,15 +40,15 @@ public class MovieLibrary {
         String firstName = UserInputHandler.getInputString();
         System.out.println("Last name: ");
         String lastName = UserInputHandler.getInputString();
-        boolean found= false;
+        boolean found = false;
         for (Movie movie : movieList) {
             if (movie.checkMovieByActorName(firstName, lastName)) {
                 System.out.println(movie.getTitle());
-                found=true;
+                found = true;
             }
         }
-        if (!found){
-            System.out.println("No move was found for: " +firstName + " " + lastName);
+        if (!found) {
+            System.out.println("No move was found for: " + firstName + " " + lastName);
         }
     }
 
