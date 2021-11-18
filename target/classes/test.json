@@ -1,0 +1,149 @@
+{
+  "movieList": [
+    {
+      "title": "Cast Away",
+      "actorList": [
+        {
+          "firstName": "Tom",
+          "lastName": "Hanks"
+        },
+        {
+          "firstName": "Helen",
+          "lastName": "Hunt"
+        }
+      ],
+      "director": {
+        "firstName": "Robert",
+        "lastName": "Zemeckis"
+      },
+      "genre": "Drama",
+      "yearOfProduction": "2000"
+    },
+    {
+      "title": "Seven",
+      "actorList": [
+        {
+          "firstName": "Brad",
+          "lastName": "Pitt"
+        },
+        {
+          "firstName": "Morgan",
+          "lastName": "Freeman"
+        },
+        {
+          "firstName": "Gwyneth",
+          "lastName": "Paltrow"
+        }
+      ],
+      "director": {
+        "firstName": "David",
+        "lastName": "Fincher"
+      },
+      "genre": "Thriller",
+      "yearOfProduction": "1995"
+    },
+    {
+      "title": "The Silence of the Lambs",
+      "actorList": [
+        {
+          "firstName": "Anthony",
+          "lastName": "Hopkins"
+        },
+        {
+          "firstName": "Jodie",
+          "lastName": "Foster"
+        }
+      ],
+      "director": {
+        "firstName": "Jonathan",
+        "lastName": "Demme"
+      },
+      "genre": "Thriller",
+      "yearOfProduction": "1991"
+    },
+    {
+      "title": "The Hangover",
+      "actorList": [
+        {
+          "firstName": "Bradley",
+          "lastName": "Cooper"
+        },
+        {
+          "firstName": "Ed",
+          "lastName": "Helms"
+        },
+        {
+          "firstName": "Zach",
+          "lastName": "Galifianakis"
+        },
+        {
+          "firstName": "Justin",
+          "lastName": "Bartha"
+        }
+      ],
+      "director": {
+        "firstName": "Todd",
+        "lastName": "Philips"
+      },
+      "genre": "Comedy",
+      "yearOfProduction": "2009"
+    },
+    {
+      "title": "Limitless",
+      "actorList": [
+        {
+          "firstName": "Bradley",
+          "lastName": "Cooper"
+        },
+        {
+          "firstName": "Robert",
+          "lastName": "De Niro"
+        }
+      ],
+      "director": {
+        "firstName": "Neil",
+        "lastName": "Burger"
+      },
+      "genre": "Thriller",
+      "yearOfProduction": "2011"
+    },
+    {
+      "title": "Goodfellas",
+      "actorList": [
+        {
+          "firstName": "Robert",
+          "lastName": "De Niro"
+        },
+        {
+          "firstName": "Ray",
+          "lastName": "Liotta"
+        }
+      ],
+      "director": {
+        "firstName": "Martin",
+        "lastName": "Scorsese"
+      },
+      "genre": "Drama",
+      "yearOfProduction": "1990"
+    },
+    {
+      "title": "Solace",
+      "actorList": [
+        {
+          "firstName": "Anthony",
+          "lastName": "Hopkins"
+        },
+        {
+          "firstName": "Colin",
+          "lastName": "Farrell"
+        }
+      ],
+      "director": {
+        "firstName": "Afonso",
+        "lastName": "Poyart"
+      },
+      "genre": "Thriller",
+      "yearOfProduction": "2015"
+    }
+  ]
+}
