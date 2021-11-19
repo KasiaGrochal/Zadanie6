@@ -27,7 +27,7 @@ public class MovieLibrary {
                 .collect(Collectors.toList());
     }
 
-    public List<Movie> getMovieListByDateRange() {
+    public List<Movie> getMovieListWithinDateRange() {
         int startRange = UserInputHandler.getInputInt(InputIntTypeHandler.FROM);
         int endRange = UserInputHandler.getInputInt(InputIntTypeHandler.UNTIL);
         return movieList.stream()

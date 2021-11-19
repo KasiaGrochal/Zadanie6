@@ -18,7 +18,7 @@ public class Main {
 
             switch (MenuHandler.getAction()) {
                 case 1:
-                    PrintToUserHandler.printMovieTitleFromMovieList(movieLibrary.getMovieListByDateRange());
+                    PrintToUserHandler.printMovieTitleFromMovieList(movieLibrary.getMovieListWithinDateRange());
                     break;
                 case 2:
                     PrintToUserHandler.printDetailsForRandomMovie(movieLibrary.getRandomMovie());
