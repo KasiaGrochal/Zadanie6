@@ -1,5 +1,4 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 import java.net.URL;
 
@@ -9,23 +8,22 @@ public class Main {
         MovieLibrary movieLibrary = new ObjectMapper().readValue(new URL("file:src/main/resources/test.json"), MovieLibrary.class);
 
         while (true) {
-            MenuHandler.printMenu();
+            MenuHandler.getMenu();
 
             switch (MenuHandler.getAction()) {
                 case 1:
-                    movieLibrary.printMoviesByDateRange();
+                    PrintToUserHelper.printMovieTitleFromMovieList(movieLibrary.getMovieListByDateRange());
                     break;
                 case 2:
-                    movieLibrary.printRandomMovieDetails();
+                    PrintToUserHelper.printMovieDetails(movieLibrary.getRandomMovie());
                     break;
                 case 3:
-                    movieLibrary.getMovieByActorName();
+                    PrintToUserHelper.printMovieTitleFromMovieList(movieLibrary.getMovieListWithSpecificActor());
                     break;
                 case 4:
-                    System.out.println("Closing the app...");
-                    System.exit(0);
+                    MenuHandler.shutDown();
                 default:
-                    System.err.println("Action not found");
+                    PrintToUserHelper.printInvalidInput();
             }
         }
     }

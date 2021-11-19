@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class MovieLibrary {
     public List<Movie> movieList;
@@ -9,47 +10,28 @@ public class MovieLibrary {
         movieList = new ArrayList<>();
     }
 
-
-    public void printRandomMovieDetails() {
+    public Movie getRandomMovie() {
         int randomNumber = new Random().nextInt(movieList.size());
         Movie randomMovie = movieList.get(randomNumber);
-        System.out.println(randomMovie.toString().replace("[", "").replace("]",""));
+        return randomMovie;
     }
 
-    public void printMoviesByDateRange() {
-        System.out.println("Please type in from which year you'd like to search:");
-        int startRange = UserInputHandler.getInputInt();
-        System.out.println("Please type in until which year you'd like to search:");
-        int endRange = UserInputHandler.getInputInt();
-        boolean found = false;
-        System.out.println("\nList of movies produced from year " + startRange + " to " + endRange + ":");
-        for (Movie movie : movieList) {
-
-            if ((movie.getYearOfProduction() >= startRange) && movie.getYearOfProduction() <= endRange) {
-                System.out.println("\t" + movie.getTitle());
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("No movie was found :(");
-        }
+    public List<Movie> getMovieListWithSpecificActor() {
+        String fullName = UserInputHandler.getInputFullName();
+        List<Movie> moviesWithActor = movieList.stream()
+                .filter(x -> x.findActorInActorList(fullName))
+                .collect(Collectors.toList());
+        return moviesWithActor;
     }
 
-    public void getMovieByActorName() {
-        System.out.println("Please type actor's full name:");
-        String fullName = UserInputHandler.getInputString();
-
-        boolean found = false;
-        for (Movie movie : movieList) {
-            if (movie.findActorInActorList(fullName)) {
-                System.out.println(movie.getTitle());
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("No move was found for: " + fullName);
-        }
+    public List<Movie> getMovieListByDateRange() {
+        int startRange = UserInputHandler.getInputInt2(InputIntTypeHelper.FROM);
+        int endRange = UserInputHandler.getInputInt2(InputIntTypeHelper.UNTIL);
+        List<Movie> movieListByDateRange = movieList.stream()
+                .filter(x-> x.getYearOfProduction()>=startRange)
+                .filter(x-> x.getYearOfProduction()<=endRange)
+                .collect(Collectors.toList());
+        return movieListByDateRange;
     }
-
 }
 
