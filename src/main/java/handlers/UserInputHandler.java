@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class UserInputHandler {
 
-    public static int getInputInt2(InputIntTypeHandler yearRange) {
+    public static int getInputInt(InputIntTypeHandler inputType) {
         Scanner scanner = new Scanner(System.in);
-        switch (yearRange) {
+        switch (inputType) {
             case FROM:
                 PrintToUserHandler.askForYearRange(InputIntTypeHandler.FROM);
                 break;

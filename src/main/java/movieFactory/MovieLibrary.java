@@ -28,8 +28,8 @@ public class MovieLibrary {
     }
 
     public List<Movie> getMovieListByDateRange() {
-        int startRange = UserInputHandler.getInputInt2(InputIntTypeHandler.FROM);
-        int endRange = UserInputHandler.getInputInt2(InputIntTypeHandler.UNTIL);
+        int startRange = UserInputHandler.getInputInt(InputIntTypeHandler.FROM);
+        int endRange = UserInputHandler.getInputInt(InputIntTypeHandler.UNTIL);
         return movieList.stream()
                 .filter(x -> x.getYearOfProduction() >= startRange)
                 .filter(x -> x.getYearOfProduction() <= endRange)
