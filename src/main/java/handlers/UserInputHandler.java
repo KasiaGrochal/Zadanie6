@@ -32,7 +32,7 @@ public class UserInputHandler {
 
     public static String getInputFullName() {
         Scanner scanner = new Scanner(System.in);
-        PrintToUserHandler.askActorFullName();
+        PrintToUserHandler.askForFullName();
         return scanner.nextLine();
     }
 }

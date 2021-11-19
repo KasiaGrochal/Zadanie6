@@ -1,5 +1,5 @@
 package movieFactory;
 
-public class Director extends Actor {
+public class Director extends MovieStaff {
 
 }

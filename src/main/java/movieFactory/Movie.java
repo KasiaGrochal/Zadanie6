@@ -15,7 +15,7 @@ public class Movie {
         return "Title: " + title +
                 "\nGenre: " + genre +
                 "\nDate: " + yearOfProduction +
-                "\nmovieFactory.Director: " + director +
+                "\nDirector: " + director +
                 "\nActors: " + actorList;
     }
 

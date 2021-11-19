@@ -6,7 +6,7 @@ import java.util.List;
 
 public class PrintToUserHandler {
 
-    public static void askActorFullName() {
+    public static void askForFullName() {
         System.out.println("Please type actor's full name:");
     }
 
@@ -22,7 +22,7 @@ public class PrintToUserHandler {
         System.out.println("List of movies that were found:");
     }
 
-    public static void printDetailsForRandomMovie(Movie movie){
+    public static void printDetailsForRandomMovie(Movie movie) {
         System.out.println("Lottery machine has picked a movie for you: ");
         printMovieDetails(movie);
     }
