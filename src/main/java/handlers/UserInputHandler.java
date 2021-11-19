@@ -1,16 +1,18 @@
+package handlers;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInputHandler {
 
-    public static int getInputInt2(InputIntTypeHelper yearRange) {
+    public static int getInputInt2(InputIntTypeHandler yearRange) {
         Scanner scanner = new Scanner(System.in);
         switch (yearRange) {
             case FROM:
-                PrintToUserHelper.askForYearRange(InputIntTypeHelper.FROM);
+                PrintToUserHandler.askForYearRange(InputIntTypeHandler.FROM);
                 break;
             case UNTIL:
-                PrintToUserHelper.askForYearRange(InputIntTypeHelper.UNTIL);
+                PrintToUserHandler.askForYearRange(InputIntTypeHandler.UNTIL);
                 break;
             case ACTION:
                 break;
@@ -21,7 +23,7 @@ public class UserInputHandler {
                 input = scanner.nextInt();
             } catch (InputMismatchException e) {
                 i--;
-                PrintToUserHelper.printInvalidInput();
+                PrintToUserHandler.printInvalidInput();
                 scanner.nextLine();
             }
         }
@@ -30,7 +32,7 @@ public class UserInputHandler {
 
     public static String getInputFullName() {
         Scanner scanner = new Scanner(System.in);
-        PrintToUserHelper.askActorFullName();
+        PrintToUserHandler.askActorFullName();
         return scanner.nextLine();
     }
 }

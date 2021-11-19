@@ -1,12 +1,16 @@
+package handlers;
+
+import movieFactory.Movie;
+
 import java.util.List;
 
-public class PrintToUserHelper {
+public class PrintToUserHandler {
 
     public static void askActorFullName() {
         System.out.println("Please type actor's full name:");
     }
 
-    public static void askForYearRange(InputIntTypeHelper yearRange) {
+    public static void askForYearRange(InputIntTypeHandler yearRange) {
         System.out.println("Please type in" + yearRange.getDisplayName() + "which year you'd like to search:");
     }
 
@@ -16,6 +20,11 @@ public class PrintToUserHelper {
 
     public static void printSearchResult() {
         System.out.println("List of movies that were found:");
+    }
+
+    public static void printDetailsForRandomMovie(Movie movie){
+        System.out.println("Lottery machine has picked a movie for you: ");
+        printMovieDetails(movie);
     }
 
     public static void printInvalidInput() {
@@ -32,16 +41,17 @@ public class PrintToUserHelper {
 
     public static void printMovieTitleFromMovieList(List<Movie> movieList) {
         if (movieList.isEmpty()) {
-            PrintToUserHelper.printNoMovieWasFound();
+            PrintToUserHandler.printNoMovieWasFound();
         } else {
-            PrintToUserHelper.printSearchResult();
+            PrintToUserHandler.printSearchResult();
             for (Movie movie : movieList) {
-                PrintToUserHelper.printMovieTitle(movie.getTitle());
+                PrintToUserHandler.printMovieTitle(movie.getTitle());
             }
         }
     }
+
     public static void printMovieDetails(Movie movie) {
-        System.out.println(FormatTextHelper.formatMovieText(movie));
+        System.out.println(FormatTextHandler.formatMovieText(movie));
     }
 
     public static void printMenu() {

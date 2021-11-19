@@ -1,3 +1,5 @@
+package movieFactory;
+
 import java.util.List;
 
 public class Movie {
@@ -13,7 +15,7 @@ public class Movie {
         return "Title: " + title +
                 "\nGenre: " + genre +
                 "\nDate: " + yearOfProduction +
-                "\nDirector: " + director +
+                "\nmovieFactory.Director: " + director +
                 "\nActors: " + actorList;
     }
 
