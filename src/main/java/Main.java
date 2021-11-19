@@ -14,7 +14,7 @@ public class Main {
         MovieLibrary movieLibrary = new ObjectMapper().readValue(new URL(MovieLibrariesManager.listForAdults), MovieLibrary.class);
 
         while (true) {
-            MenuHandler.getMenu();
+            PrintToUserHandler.printMenu();
 
             switch (MenuHandler.getAction()) {
                 case 1:
