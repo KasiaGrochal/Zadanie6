@@ -1,30 +1,27 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
+import handlers.ListDirectory;
 import handlers.MenuHandler;
 import handlers.PrintToUserHandler;
-import movieFactory.MovieLibrariesManager;
-import movieFactory.MovieLibrary;
+import movieFactory.LibrariesManager;
 
-import java.io.IOException;
-import java.net.URL;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
 
-        MovieLibrary movieLibrary = new ObjectMapper().readValue(new URL(MovieLibrariesManager.listForAdults), MovieLibrary.class);
+        LibrariesManager librariesManager = new LibrariesManager(ListDirectory.ADULTS);
 
         while (true) {
             PrintToUserHandler.printMenu();
 
             switch (MenuHandler.getAction()) {
                 case 1:
-                    PrintToUserHandler.printMovieTitleFromMovieList(movieLibrary.getMovieListWithinDateRange());
+                    PrintToUserHandler.printMovieTitleFromMovieList(librariesManager.getMovieLibrary().getMovieListWithinDateRange());
                     break;
                 case 2:
-                    PrintToUserHandler.printDetailsForRandomMovie(movieLibrary.getRandomMovie());
+                    PrintToUserHandler.printDetailsForRandomMovie(librariesManager.getMovieLibrary().getRandomMovie());
                     break;
                 case 3:
-                    PrintToUserHandler.printMovieTitleFromMovieList(movieLibrary.getMovieListWithSpecificActor());
+                    PrintToUserHandler.printMovieTitleFromMovieList(librariesManager.getMovieLibrary().getMovieListWithSpecificActor());
                     break;
                 case 4:
                     MenuHandler.shutDown();

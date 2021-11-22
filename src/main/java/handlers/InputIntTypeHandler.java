@@ -3,7 +3,7 @@ package handlers;
 public enum InputIntTypeHandler {
     FROM(" from "), UNTIL(" until "), ACTION("");
 
-    private String displayName;
+    private final String displayName;
 
     InputIntTypeHandler(String displayName) {
         this.displayName = displayName;
