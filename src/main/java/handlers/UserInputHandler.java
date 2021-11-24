@@ -1,18 +1,20 @@
 package handlers;
 
+import models.InputIntType;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInputHandler {
 
-    public static int getInputInt(InputIntTypeHandler inputType) {
+    public static int getInputInt(InputIntType inputType) {
         Scanner scanner = new Scanner(System.in);
         switch (inputType) {
             case FROM:
-                PrintToUserHandler.askForYearRange(InputIntTypeHandler.FROM);
+                PrintToUserHandler.askForYearRange(InputIntType.FROM);
                 break;
             case UNTIL:
-                PrintToUserHandler.askForYearRange(InputIntTypeHandler.UNTIL);
+                PrintToUserHandler.askForYearRange(InputIntType.UNTIL);
                 break;
             case ACTION:
                 break;

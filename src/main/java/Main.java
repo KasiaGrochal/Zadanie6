@@ -1,6 +1,5 @@
-import handlers.ListDirectory;
-import handlers.MenuHandler;
-import handlers.PrintToUserHandler;
+import handlers.*;
+import models.InputIntType;
 import movieFactory.LibrariesManager;
 
 
@@ -15,13 +14,17 @@ public class Main {
 
             switch (MenuHandler.getAction()) {
                 case 1:
-                    PrintToUserHandler.printMovieTitleFromMovieList(librariesManager.getMovieLibrary().getMovieListWithinDateRange());
+                    PrintToUserHandler.
+                            printMovieTitleFromMovieList(librariesManager.
+                            getMovieLibrary().
+                            getMovieListWithinDateRange(UserInputHandler.getInputInt(InputIntType.FROM), UserInputHandler.getInputInt(InputIntType.UNTIL)));
                     break;
                 case 2:
                     PrintToUserHandler.printDetailsForRandomMovie(librariesManager.getMovieLibrary().getRandomMovie());
                     break;
                 case 3:
-                    PrintToUserHandler.printMovieTitleFromMovieList(librariesManager.getMovieLibrary().getMovieListWithSpecificActor());
+                    PrintToUserHandler.
+                            printMovieTitleFromMovieList(librariesManager.getMovieLibrary().getMovieListWithSpecificActor(UserInputHandler.getInputFullName()));
                     break;
                 case 4:
                     MenuHandler.shutDown();

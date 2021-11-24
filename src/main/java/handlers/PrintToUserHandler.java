@@ -1,5 +1,6 @@
 package handlers;
 
+import models.InputIntType;
 import movieFactory.Movie;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public class PrintToUserHandler {
         System.out.println("Please type actor's full name:");
     }
 
-    public static void askForYearRange(InputIntTypeHandler yearRange) {
+    public static void askForYearRange(InputIntType yearRange) {
         System.out.println("Please type in" + yearRange.getDisplayName() + "which year you'd like to search:");
     }
 

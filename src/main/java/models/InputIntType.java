@@ -1,11 +1,11 @@
-package handlers;
+package models;
 
-public enum InputIntTypeHandler {
+public enum InputIntType {
     FROM(" from "), UNTIL(" until "), ACTION("");
 
     private final String displayName;
 
-    InputIntTypeHandler(String displayName) {
+    InputIntType(String displayName) {
         this.displayName = displayName;
     }
 
